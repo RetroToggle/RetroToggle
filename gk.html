@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetroToggle – Vintage Hardware That Lives in 2025</title>
+  <meta name="description" content="We don’t just add Wi-Fi to old gear. We make it breathe, glow, and feel alive again.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #884488;
+      --pink: #ff4d9c;
+      --cyan: #00e6e6;
+      --yellow: #ffd000;
+      --bg: #0a0010;
+      --surface: #1a0f2e;
+      --text: #f0e0ff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-weight: 500;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated living background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255,77,156,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0,230,230,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(136,68,136,0.3) 0%, transparent 70%);
+      animation: breathe 20s ease-in-out infinite;
+      z-index: -2;
+    }
+    @keyframes breathe {
+      0%,100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.12) rotate(3deg); }
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--cyan);
+      border-radius: 50%;
+      opacity: 0;
+      animation: floatUp 14s infinite linear;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
+      10%  { opacity: 0.6; }
+      90%  { opacity: 0.1; }
+      100% { transform: translateY(-120px) translateX(80px); opacity: 0; }
+    }
+
+    header {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content { max-width: 1400px; width: 100%; }
+
+    h1 {
+      font-size: clamp(4rem, 12vw, 12rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      background: linear-gradient(90deg, var(--purple), var(--pink), var(--cyan), var(--yellow), var(--purple));
+      background-size: 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 12s ease infinite;
+    }
+    @keyframes rainbow {
+      0%,100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .tagline {
+      font-size: clamp(1.8rem, 6vw, 4.5rem);
+      font-weight: 900;
+      margin: 1.5rem 0;
+      background: linear-gradient(90deg, var(--cyan), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .devices {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: clamp(2rem, 5vw, 5rem);
+      margin: 4rem 0 3rem;
+      padding: 0 1rem;
+    }
+    .device-svg {
+      width: clamp(120px, 28vw, 340px);
+      filter: drop-shadow(0 0 40px rgba(255,77,156,0.4));
+      animation: float 10s ease-in-out infinite, glow 4s ease-in-out infinite alternate;
+    }
+    .device-svg:nth-child(2) { animation-delay: -2s, -1s; }
+    .device-svg:nth-child(3) { animation-delay: -5s, -2s; }
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(3deg); }
+    }
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 40px rgba(255,77,156,0.4)); }
+      to   { filter: drop-shadow(0 0 80px rgba(0,230,230,0.6)); }
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .cta a {
+      padding: 1.2rem 2.5rem;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 800;
+      border-radius: 16px;
+      text-decoration: none;
+      transition: all 0.4s;
+      min-width: 220px;
+    }
+    .btn-primary {
+      background: linear-gradient(45deg, var(--purple), var(--pink));
+      color: white;
+      box-shadow: 0 20px 50px rgba(255,77,156,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 30px 80px rgba(255,77,156,0.6); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--cyan);
+      border: 3px solid var(--cyan);
+      box-shadow: 0 0 40px rgba(0,230,230,0.3);
+    }
+    .btn-secondary:hover { background: var(--cyan); color: #000; }
+
+    section {
+      padding: clamp(100px, 15vw, 180px) 5% clamp(80px, 10vw, 140px);
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      text-align: center;
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+      gap: clamp(2rem, 4vw, 4rem);
+      padding: 0 1rem;
+    }
+    .card {
+      background: rgba(26,15,46,0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,77,156,0.3);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      border-radius: 28px;
+      transition: all 0.5s;
+    }
+    .card:hover {
+      transform: translateY(-20px);
+      border-color: var(--cyan);
+      box-shadow: 0 40px 100px rgba(0,230,230,0.2);
+    }
+    .card h3 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--purple), #000);
+      padding: clamp(100px, 15vw, 180px) 5% 100px;
+      text-align: center;
+      color: white;
+    }
+    footer p { font-size: clamp(1.4rem, 4vw, 2rem); margin: 1.5rem 0; }
+    footer a { color: var(--cyan); text-decoration: none; font-size: clamp(1.8rem, 5vw, 2.5rem); }
+
+    @media (max-width: 480px) {
+      .cta { flex-direction: column; align-items: center; }
+      .cta a { width: 90%; max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <header>
+    <div class="hero-content">
+      <h1>RetroToggle</h1>
+      <p class="tagline">Your old gear<br>just woke up</p>
+
+      <div class="devices">
+        <svg viewBox="0 0 300 300" class="device-svg"><rect x="50" y="60" width="200" height="180" rx="30" fill="none" stroke="url(#g1)" stroke-width="16"/><circle cx="110" cy="150" r="35" fill="none" stroke="url(#g2)" stroke-width="12"/><circle cx="190" cy="150" r="35" fill="none" stroke="url(#g2)" stroke-width="12"/><defs><linearGradient id="g1"><stop offset="0%" stop-color="#ff4d9c"/><stop offset="100%" stop-color="#00e6e6"/></linearGradient><linearGradient id="g2"><stop offset="0%" stop-color="#ffd000"/><stop offset="100%" stop-color="#ff4d9c"/></linearGradient></defs></svg>
+
+        <svg viewBox="0 0 300 300" class="device-svg"><rect x="70" y="50" width="160" height="200" rx="40" fill="none" stroke="url(#g3)" stroke-width="18"/><rect x="100" y="90" width="100" height="100" rx="12" fill="none" stroke="#ffd000" stroke-width="8"/><defs><linearGradient id="g3"><stop offset="0%" stop-color="#00e6e6"/><stop offset="100%" stop-color="#884488"/></linearGradient></defs></svg>
+
+        <svg viewBox="0 0 300 300" class="device-svg"><rect x="40" y="80" width="220" height="140" rx="25" fill="none" stroke="url(#g4)" stroke-width="16"/><circle cx="150" cy="65" r="20" fill="#ffd000"/><defs><linearGradient id="g4"><stop offset="0%" stop-color="#ff4d9c"/><stop offset="100%" stop-color="#00e6e6"/></linearGradient></defs></svg>
+      </div>
+
+      <div class="cta">
+        <a href="mailto:hello@retrotoggle.com" class="btn-primary">Wake It Up Now</a>
+        <a href="#projects" class="btn-secondary">See It Live</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>This isn’t retro.<br>This is alive.</h2>
+    <div class="grid">
+      <div class="card"><h3>Wi-Fi that pulses</h3><p>Your Walkman now glows when a new track starts. Because it can.</p></div>
+      <div class="card"><h3>Voice control that listens</h3><p>“Play my mixtape” — and the cassette actually spins.</p></div>
+      <div class="card"><h3>Online NES that screams</h3><p>Original hardware. Real controllers. Lag-free chaos across the planet.</p></div>
+      <div class="card"><h3>Home Assistant that feels</h3><p>Your 1974 turntable knows when the needle drops.</p></div>
+      <div class="card"><h3>Mods that breathe</h3><p>RGB that reacts to the music. LEDs that pulse with the bass.</p></div>
+      <div class="card"><h3>100% reversible magic</h3><p>Take it all out tomorrow and it’s still 1987. But why would you?</p></div>
+    </div>
+  </section>
+
+  <footer id="projects">
+    <p>Your vintage gear isn’t dead.</p>
+    <p>It was just sleeping.</p>
+    <p><a href="mailto:hello@retrotoggle.com">hello@retrotoggle.com</a></p>
+    <p style="margin-top:4rem;opacity:0.8;font-size:1rem;">© 2025 RetroToggle — We resurrect the past.</p>
+  </footer>
+
+  <script>
+    const p = document.getElementById('particles');
+    for(let i = 0; i < 35; i++) {
+      const e = document.createElement('div');
+      e.classList.add('particle');
+      e.style.left = Math.random() * 100 + 'vw';
+      e.style.animationDelay = Math.random() * 14 + 's';
+      e.style.background = ['#ff4d9c','#00e6e6','#ffd000','#884488'][Math.floor(Math.random()*4)];
+      p.appendChild(e);
+    }
+  </script>
+</body>
+</html>
