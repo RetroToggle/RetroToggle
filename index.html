@@ -166,17 +166,37 @@
         .serviceBoxes
         {
             display: flex;
+            gap: 8px;
+        }
+        .serviceBoxes img
+        {
+            width: 100%;
         }
         @media (orientation: portrait)
 		{
 			.serviceBoxes
 			{
 				flex-direction: column;
+                gap: 4px;
 			}
 		}
         .serviceBoxes article
         {
             display: inline-block;
+            padding: 8px;
+        }
+        .serviceBoxes article:nth-child(even)
+        {
+            background-color: var(--accent);
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        @media (orientation: portrait)
+		{
+            .serviceBoxes article, .serviceBoxes article:nth-child(even)
+            {
+                padding: 8px;
+            }
         }
         .promoBanner
         {
@@ -286,12 +306,14 @@
 			</ul>
         </div>
 
-        <div class="defAlignemnt defSection services">
+        <div class="defAlignemnt services">
             <h2>SERVICES</h2>
             
             <div class="serviceBoxes">
                 <article>
                     <h3>LEGACY SYSTEMS</h3>
+
+                    <img src="assets/media/content/eml.jpg" alt="">
 
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
@@ -301,6 +323,8 @@
                 <article>
                     <h3>SMART DEVICES</h3>
 
+                    <img src="assets/media/content/sml.jpg" alt="">
+
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
                     </p>
@@ -308,6 +332,8 @@
 
                 <article>
                     <h3>CONSULTANCY</h3>
+
+                    <img src="assets/media/content/cmfl.jpg" alt="">
 
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
@@ -323,7 +349,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit unde modi eligendi cupiditate quas officiis nesciunt nemo expedita dicta voluptate perspiciatis officia enim, quisquam voluptates tempora, distinctio molestiae nobis explicabo.</p>
 
                 <br>
-                
+
                 <a href="#">LEARN MORE</a>
             </div>
         </div>
