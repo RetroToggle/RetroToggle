@@ -14,12 +14,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/088b0b403f.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="assets/css/main.css">
 
     <meta name="theme-color" content="#884488" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#884488" media="(prefers-color-scheme: dark)">
 
     <style>
+        /* Theme */
         :root
         {
             --accent: #884488;
@@ -34,12 +37,46 @@
             background-color: var(--accent);
         }
 
+        /* Shared classes */
         .defAlignemnt
         {
             padding-left: 128px;
             padding-right: 128px;
         }
+        .defSection
+        {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+        .defCTA
+		{
+			color: var(--accent);
+			border: 4px solid var(--accent);
 
+			padding: 8px;
+			padding-left: 20px;
+			padding-right: 20px;
+
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+		.defCTA:active, .defCTA:hover
+		{
+			color: #ffffff;
+			background-color: var(--accent);
+		}
+		.primaryCTA
+		{
+			color: #ffffff;
+			background-color: var(--accent);
+		}
+		.primaryCTA:active, .primaryCTA:hover
+		{
+			color: var(--accent);
+			background-color: initial;
+		}
+
+        /* Everything Else */
         header
         {
             padding-bottom: 32px;
@@ -65,12 +102,85 @@
             padding-top: 32px;
             padding-bottom: 32px;
         }
+        .cover
+        {
+            display: block;
+        }
+        .coverCTA
+		{
+			display: flex;
+			gap: 16px;
+		}
+		.coverCTA li
+		{
+			margin-bottom: 16px;
+		}
+		@media (orientation: portrait)
+		{
+			.coverCTA
+			{
+				flex-direction: column;
+			}
+		}
+		.coverCTA li
+		{
+			display: inline-block;
+		}
+        .services
+        {
+            background-color: var(--accent64);
+
+            color: #ffffff;
+        }
+        .services h2
+        {
+            display: none;
+        }
+        .serviceBoxes
+        {
+            display: flex;
+        }
+        .serviceBoxes article
+        {
+            display: inline-block;
+        }
+        .promoBanner
+        {
+            background-color: var(--accent);
+            padding: 16px;
+        }
 
         footer
         {
-            padding-top: 32px;
-            padding-bottom: 16px;
+            padding-top: 16px;
+            padding-bottom: 8px;
         }
+        .footerSocials
+		{
+			display: flex;
+			gap: 8px;
+		}
+		.footerSocials li
+		{
+			display: inline-block;
+		}
+		.footerSocials a
+		{
+			line-height: 1;
+			display: inline-block;
+			padding: 8px;
+		}
+		.footerSocials i
+		{
+			display: inline-block;
+			aspect-ratio: 1/1;
+		}
+		.copyrightNotice
+		{
+			padding-top: 16px;
+			padding-bottom: 8px;
+			font-size: 1rem;
+		}
     </style>
 </head>
 <body>
@@ -83,13 +193,13 @@
     </header>
 
     <main>
-        <div class="defAlignemnt">
-            <h1>
+        <div class="defAlignemnt defSection cover">
+            <h1 class="accentText">
                 Automating your life!
             </h1>
 
             <h2>
-                We save you time by automating things that need your input.
+                We save you time by <span class="accentText">automating</span> things that need your input.
             </h2>
 
             <br>
@@ -97,12 +207,78 @@
             <p>
                 Automating the hardware that was Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis ad harum omnis aspernatur voluptatem culpa quis nostrum tenetur dignissimos magni officia ducimus, minima repellat cupiditate eum delectus mollitia rem. Natus!
             </p>
+
+            <br><br>
+
+			<ul class="coverCTA">
+				<li><a href="#" class="defCTA primaryCTA" target="_blank">
+                    PRODUCTS
+                </a></li>
+				<li>
+					<a href="#" class="defCTA" target="_blank">
+                        GET IN TOUCH
+                    </a>
+				</li>
+			</ul>
+        </div>
+
+        <div class="defAlignemnt defSection services">
+            <h2>SERVICES</h2>
+            
+            <div class="serviceBoxes">
+                <article>
+                    <h3>Legacy Systems</h3>
+
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Custom Solutions</h3>
+
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Consultancy</h3>
+
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
+                    </p>
+                </article>
+            </div>
+        </div>
+
+        <div class="defAlignemnt defSection">
+            <div class="promoBanner">
+                <h2>WE CAN HELP YOU WITH</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit unde modi eligendi cupiditate quas officiis nesciunt nemo expedita dicta voluptate perspiciatis officia enim, quisquam voluptates tempora, distinctio molestiae nobis explicabo.</p>
+
+                <a href="#">Something</a>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="defAlignemnt">
-            <p>
+            <ul class="footerSocials">
+				<li>
+					<a href="https://www.facebook.com/Muflah/" target="_blank" class="defCTA">
+						<i class="fa-brands fa-facebook"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/muflah/" target="_blank" class="defCTA">
+						<i class="fa-brands fa-linkedin-in"></i>
+					</a>
+				</li>
+			</ul>
+
+            <p class="copyrightNotice">
                 &copy 2025 RetroToggle.
             </p>
         </div>
