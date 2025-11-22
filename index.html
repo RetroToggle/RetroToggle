@@ -132,6 +132,17 @@
         .cover
         {
             display: block;
+            overflow: auto;
+        }
+        .coverImg
+        {
+            float: right;
+            max-width: 50vh;
+            border: 12px solid var(--accent);
+            outline: 16px solid var(--accent64); /* Outer "border" */
+            outline-offset: 0px; /* Space between border and outline */
+            border-radius: 32px;
+            margin: 16px;
         }
         .coverCTA
 		{
@@ -276,6 +287,8 @@
 
     <main>
         <div class="defAlignemnt defSection cover">
+            <img src="assets/media/content/gemh.png" class="coverImg" alt="">
+
             <h1 class="accentText">
                 Automating your life!
             </h1>
@@ -306,6 +319,7 @@
 			</ul>
         </div>
 
+        <div class="defSection">
         <div class="defAlignemnt services">
             <h2>SERVICES</h2>
             
@@ -340,6 +354,7 @@
                     </p>
                 </article>
             </div>
+        </div>
         </div>
 
         <div class="defAlignemnt defSection">
