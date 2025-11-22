@@ -43,6 +43,14 @@
             padding-left: 128px;
             padding-right: 128px;
         }
+        @media (orientation: portrait)
+        {
+            .defAlignemnt
+            {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
         .defSection
         {
             padding-top: 32px;
@@ -83,7 +91,10 @@
         }
         .headerLogo
         {
+            margin: 0;
+            border: none;
             padding: 4px;
+
             background-color: var(--accent);
             display: inline-block;
         }
@@ -140,6 +151,13 @@
         {
             display: flex;
         }
+        @media (orientation: portrait)
+		{
+			.serviceBoxes
+			{
+				flex-direction: column;
+			}
+		}
         .serviceBoxes article
         {
             display: inline-block;
@@ -148,6 +166,33 @@
         {
             background-color: var(--accent);
             padding: 16px;
+        }
+        .products
+        {
+            display: block;
+        }
+        .products h2
+        {
+            color: var(--accent);
+        }
+        .productBoxes
+        {
+            display: flex;
+            gap: 32px;
+        }
+        @media (orientation: portrait)
+		{
+			.productBoxes
+			{
+				flex-direction: column;
+			}
+		}
+        .productBoxes article
+        {
+            display: inline-block;
+            padding: 8px;
+
+            background-color: var(--accent64);
         }
 
         footer
@@ -258,7 +303,37 @@
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit unde modi eligendi cupiditate quas officiis nesciunt nemo expedita dicta voluptate perspiciatis officia enim, quisquam voluptates tempora, distinctio molestiae nobis explicabo.</p>
 
-                <a href="#">Something</a>
+                <a href="#">LEARN MORE</a>
+            </div>
+        </div>
+
+        <div class="defAlignemnt defSection products">
+            <h2>PRODUCTS</h2>
+            
+            <div class="productBoxes">
+                <article>
+                    <h3>Legacy Systems</h3>
+
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Custom Solutions</h3>
+
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Consultancy</h3>
+
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
+                    </p>
+                </article>
             </div>
         </div>
     </main>
