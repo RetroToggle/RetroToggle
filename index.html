@@ -36,6 +36,10 @@
         {
             background-color: var(--accent);
         }
+        a:active, a:hover
+        {
+            color: #cccccc;
+        }
 
         /* Shared classes */
         .defAlignemnt
@@ -115,6 +119,11 @@
             height: 60px;
             padding: 2px;
         }
+        .headerNav
+        {
+            float: right;
+            padding: 32px;
+        }
 
         main
         {
@@ -136,13 +145,21 @@
         }
         .coverImg
         {
-            float: right;
-            max-width: 50vh;
             border: 12px solid var(--accent);
             outline: 16px solid var(--accent64); /* Outer "border" */
             outline-offset: 0px; /* Space between border and outline */
             border-radius: 32px;
-            margin: 16px;
+           display: none;
+        }
+        @media (orientation: landscape)
+        {
+            .coverImg
+            {
+                display: block;
+                float: right;
+                max-width: 50vh;
+                margin: 16px;
+            }
         }
         .coverCTA
 		{
@@ -212,6 +229,7 @@
         .promoBanner
         {
             background-color: var(--accent);
+            color: #DDDDDD;
             padding: 16px;
         }
         .products
@@ -247,6 +265,7 @@
         {
             padding-top: 16px;
             padding-bottom: 8px;
+            background-color: var(--accent);
         }
         .footerSocials
 		{
@@ -268,6 +287,17 @@
 			display: inline-block;
 			aspect-ratio: 1/1;
 		}
+        .footerSocials .defCTA
+        {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+        .footerSocials .defCTA:active, .footerSocials .defCTA:hover
+        {
+            color: var(--accent64);
+            background-color: #ffffff;
+            border-color: var(--accent64);
+        }
 		.copyrightNotice
 		{
 			padding-top: 16px;
@@ -282,6 +312,12 @@
             <a href="https://retrotoggle.com/" class="headerLogo">
                 <img src="assets/media/RetroToggle.svg" alt="">
             </a>
+
+            <div class="headerNav">
+                <a href="#" class="defCTA primaryCTA" target="_blank">
+                    SHOP
+                </a>
+            </div>
         </div>
     </header>
 
@@ -308,12 +344,12 @@
 			<ul class="coverCTA">
 				<li>
                     <a href="#" class="defCTA primaryCTA" target="_blank">
-                        PRODUCTS
+                        DISCOVER
                     </a>
                 </li>
 				<li>
 					<a href="#" class="defCTA" target="_blank">
-                        DESIGN
+                        TALK TO EXPERT
                     </a>
 				</li>
 			</ul>
@@ -370,7 +406,7 @@
         </div>
 
         <div class="defAlignemnt defSection products">
-            <h2>PRODUCTS</h2>
+            <h2>FEATURED</h2>
             
             <div class="productBoxes">
                 <article>
@@ -402,6 +438,12 @@
                     </p>
                 </article>
             </div>
+
+            <br><br>
+
+            <a href="#" class="defCTA primaryCTA" target="_blank">
+                SHOP
+            </a>
         </div>
     </main>
 
@@ -409,12 +451,22 @@
         <div class="defAlignemnt">
             <ul class="footerSocials">
 				<li>
-					<a href="https://www.facebook.com/Muflah/" target="_blank" class="defCTA">
+					<a href="https://www.instagram.com/retrotoggle/" target="_blank" class="defCTA">
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+				</li>
+                <li>
+					<a href="https://www.x.com/retrotoggle/" target="_blank" class="defCTA">
+						<i class="fa-brands fa-x-twitter"></i>
+					</a>
+				</li>
+                <li>
+					<a href="https://www.facebook.com/retrotoggle/" target="_blank" class="defCTA">
 						<i class="fa-brands fa-facebook"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://www.linkedin.com/in/muflah/" target="_blank" class="defCTA">
+					<a href="https://www.linkedin.com/company/retrotoggle/" target="_blank" class="defCTA">
 						<i class="fa-brands fa-linkedin-in"></i>
 					</a>
 				</li>
