@@ -99,7 +99,7 @@
         /* Everything Else */
         header
         {
-            padding-bottom: 32px;
+            background-color: var(--accent64);
         }
         .headerLogo
         {
@@ -122,8 +122,11 @@
         .headerNav
         {
             float: right;
-            padding: 16px;
-			margin-top: 16px;
+			margin-top: 24px;
+        }
+        .headerNav a:active, .headerNav a:hover
+        {
+            color: #ffffff;
         }
 
         main
@@ -263,14 +266,18 @@
             display: inline-block;
             padding-bottom: 16px;
 
-            border: solid var(--accent);
+            border: solid var(--accent64);
             border-width: 0 0 2px 0;
 			flex: 1;
 
 			margin-top: 32px;
 			margin-bottom: 16px;
+        }
+		.productBoxes article:active, .productBoxes article:hover
+		{
+			border-color: var(--accent);
 		}
-		.productBoxes article:active a, .productBoxes article:hover a
+        .productBoxes article:active a, .productBoxes article:hover a
 		{
 			color: var(--accent);
 		}
@@ -281,7 +288,7 @@
 
         footer
         {
-            padding-top: 16px;
+            padding-top: 32px;
             padding-bottom: 8px;
             background-color: var(--accent);
         }
@@ -321,6 +328,7 @@
 			padding-top: 16px;
 			padding-bottom: 8px;
 			font-size: 1rem;
+            color: #ffffff;
 		}
     </style>
 </head>
