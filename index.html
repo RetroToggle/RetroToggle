@@ -538,7 +538,7 @@
         <div class="defAlignemnt defSection">
             <h2>GET IN TOUCH</h2>
 
-            <form class="contactForm" id="contact-form" action='https://forms.zohopublic.com/retrotogglegm1/form/ContactRetroToggle/formperma/whrZ1z1ynnVVTJM7SSmrnPzbfFMVDu_m2yt3HGB1kUk/htmlRecords/submit' name='form' id='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+            <form class="contactForm" id="contact-form" action='https://forms.zohopublic.com/retrotogglegm1/form/ContactRetroToggle/formperma/whrZ1z1ynnVVTJM7SSmrnPzbfFMVDu_m2yt3HGB1kUk/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
 				<input type="hidden" name="zf_referrer_name" value=""><!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
 				<input type="hidden" name="zf_redirect_url" value="https://retrotoggle.com/"><!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
 				<input type="hidden" name="zc_gad" value=""><!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
@@ -595,30 +595,6 @@
         </div>
     </footer>
 
-	<script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop the form from navigating the page
-    
-    // Zoho's specific submission URL
-    const formUrl = 'https://forms.zohopublic.com/retrotogglegm1/form/ContactRetroToggle/formperma/whrZ1z1ynnVVTJM7SSmrnPzbfFMVDu_m2yt3HGB1kUk/htmlRecords/submit';
-    
-    const formData = new FormData(this);
-
-    // Send the data in the background
-    fetch(formUrl, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors' // Needed for cross-origin submission
-    })
-    .then(response => {
-        // Form submitted. Show success message directly on your page.
-        alert('✅ Message sent successfully! Thank you.'); 
-        this.reset(); // Clear the form fields
-    })
-    .catch(error => {
-        alert('❌ There was an error. Please try again.');
-    });
-});
-</script>
+	<script src="assets/js/messageSent.js"></script>
 </body>
 </html>
