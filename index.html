@@ -132,6 +132,7 @@
         main
         {
             padding-top: 32px;
+            padding-bottom: 32px;
         }
         @media (orientation: portrait)
         {
@@ -264,10 +265,14 @@
         .productBoxes article
         {
             display: inline-block;
+            padding: 8px;
             padding-bottom: 16px;
 
             border: solid var(--accent64);
-            border-width: 0 0 2px 0;
+            border-width: 0 0 4px 0;
+
+            outline: 2px solid var(--accent64);
+            outline-offset: 0px;
 			flex: 1;
 
 			margin-top: 32px;
@@ -285,6 +290,56 @@
 		{
 			color: var(--accent64);
 		}
+        .contactForm
+        {
+            display: block;
+			color: var(--accent);
+        }
+        .contactFormInput, .contactFormInputRow
+        {
+            display: flex;
+            gap: 16px;
+			flex-direction: column;
+        }
+		.contactFormInputRow
+		{
+			flex-direction: row;
+		}
+		@media (orientation: portrait)
+		{
+			.contactFormInputRow
+			{
+				flex-direction: column;
+			}
+		}
+		.contactFormInputRow input
+		{
+			flex: auto;
+		}
+        .contactFormInput input, .contactFormInput textarea
+        {
+			flex: auto;
+            border: 2px solid var(--accent64);
+            padding: 8px;
+            background-color: #ffffff00;
+            border-radius: 0;
+            outline: none;
+        }
+        .contactFormInput input:focus, .contactFormInput textarea:focus
+        {
+            border-color: var(--accent);
+            background-color: #ffffff;
+        }
+		.contactForm textarea
+		{
+			resize: vertical;
+			min-height: 128px;
+		}
+        .contactForm button
+        {
+            display: inline-block;
+			margin-top: 16px;
+        }
 
         footer
         {
@@ -479,6 +534,34 @@
                 </article>
             </div>
         </div>
+
+        <div class="defAlignemnt defSection">
+            <h2>GET IN TOUCH</h2>
+
+            <form class="contactForm" action='https://forms.zohopublic.com/retrotogglegm1/form/ContactRetroToggle/formperma/whrZ1z1ynnVVTJM7SSmrnPzbfFMVDu_m2yt3HGB1kUk/htmlRecords/submit' name='form' id='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+				<input type="hidden" name="zf_referrer_name" value=""><!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+				<input type="hidden" name="zf_redirect_url" value="https://retrotoggle.com/"><!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+				<input type="hidden" name="zc_gad" value=""><!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+        
+                <div class="contactFormInput">
+					<div class="contactFormInputRow">
+						<input  type="text" name="SingleLine1" value="" fieldType=1 maxlength="255" placeholder="NAME" />
+						<!--
+						<input type="text" maxlength="255" name="Name_First" fieldType=7 placeholder="FIRST NAME"/>
+						<input type="text" maxlength="255" name="Name_Last" fieldType=7 placeholder="LAST NAME"/>
+						-->
+						<input type="email" maxlength="255" name="Email" value="" fieldType=9 placeholder="EMAIL*" required/>
+					</div>
+                    
+					<input  type="text" name="SingleLine" value="" fieldType=1 maxlength="255" placeholder="SUBJECT"/>
+
+					<textarea name="MultiLine" maxlength="65535" placeholder="MESSAGE*" required></textarea>
+                </div>
+				
+                <button type="submit" class="defCTA primaryCTA">SEND</button>
+            </form>
+		</div>
+</section>
     </main>
 
     <footer>
