@@ -38,7 +38,7 @@
         }
         a:active, a:hover
         {
-            color: #cccccc;
+            color: #999999;
         }
 
         /* Shared classes */
@@ -122,13 +122,13 @@
         .headerNav
         {
             float: right;
-            padding: 32px;
+            padding: 16px;
+			margin-top: 16px;
         }
 
         main
         {
             padding-top: 32px;
-            padding-bottom: 32px;
         }
         @media (orientation: portrait)
         {
@@ -186,15 +186,13 @@
             background-color: var(--accent64);
 
             color: #ffffff;
-        }
-        .services h2
-        {
-            display: none;
+
+			padding-top: 32px;
         }
         .serviceBoxes
         {
             display: flex;
-            gap: 8px;
+            gap: 0px;
         }
         .serviceBoxes img
         {
@@ -212,12 +210,17 @@
         {
             display: inline-block;
             padding: 8px;
+			flex: 1;
         }
+		.serviceBoxes article:nth-child(odd)
+		{
+			background-color: var(--accent64);
+		}
         .serviceBoxes article:nth-child(even)
         {
             background-color: var(--accent);
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: 8px;
+            padding-right: 8px;
         }
         @media (orientation: portrait)
 		{
@@ -231,35 +234,51 @@
             background-color: var(--accent);
             color: #DDDDDD;
             padding: 16px;
+
+			margin-top: 32px;
+			margin-bottom: 32px;
         }
         .products
         {
             display: block;
         }
-        .products h2
-        {
-            color: var(--accent);
-        }
+		.products img
+		{
+			width: 100%;
+		}
         .productBoxes
         {
             display: flex;
-            gap: 32px;
+            gap: 128px;
         }
         @media (orientation: portrait)
 		{
 			.productBoxes
 			{
 				flex-direction: column;
+				gap: 16px;
 			}
 		}
         .productBoxes article
         {
             display: inline-block;
-            padding: 8px;
             padding-bottom: 16px;
 
-            background-color: var(--accent64);
-        }
+            border: solid var(--accent);
+            border-width: 0 0 2px 0;
+			flex: 1;
+
+			margin-top: 32px;
+			margin-bottom: 16px;
+		}
+		.productBoxes article:active a, .productBoxes article:hover a
+		{
+			color: var(--accent);
+		}
+		.productBoxes a:active, .productBoxes a:hover
+		{
+			color: var(--accent64);
+		}
 
         footer
         {
@@ -355,9 +374,71 @@
 			</ul>
         </div>
 
-        <div class="defSection">
-        <div class="defAlignemnt services">
-            <h2>SERVICES</h2>
+        <div class="defAlignemnt defSection products">
+            <h2>FEATURED PRODUCTS</h2>
+            
+            <div class="productBoxes">
+                <article>
+					<img src="assets/media/content/cmfl.jpg" alt="">
+
+                    <h3>RCTS</h3>
+
+                    <p>
+						Control relay based on resistor input.
+					</p>
+                    
+                    <br>
+                    <a href="#">ORDER NOW</a>
+                </article>
+
+				<article>
+					<img src="assets/media/content/cmfl.jpg" alt="">
+
+                    <h3>RCTS</h3>
+
+                    <p>
+						Control relay based on resistor input.
+					</p>
+                    
+                    <br>
+                    <a href="#">ORDER NOW</a>
+                </article>
+
+				<article>
+					<img src="assets/media/content/cmfl.jpg" alt="">
+
+                    <h3>RCTS</h3>
+
+                    <p>
+						Control relay based on resistor input.
+					</p>
+                    
+                    <br>
+                    <a href="#">ORDER NOW</a>
+                </article>
+            </div>
+
+            <br><br>
+
+            <a href="#" class="defCTA primaryCTA" target="_blank">
+            	ALL PRODUCTS
+            </a>
+        </div>
+
+        <div class="defAlignemnt defSection">
+            <div class="promoBanner">
+                <h2>WE CAN HELP YOU WITH</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit unde modi eligendi cupiditate quas officiis nesciunt nemo expedita dicta voluptate perspiciatis officia enim, quisquam voluptates tempora, distinctio molestiae nobis explicabo.</p>
+
+                <br>
+
+                <a href="#">LEARN MORE</a>
+            </div>
+        </div>
+
+        <div class="defAlignemnt defSection services">
+			<h2>WHAT WE DO</h2>
             
             <div class="serviceBoxes">
                 <article>
@@ -390,60 +471,6 @@
                     </p>
                 </article>
             </div>
-        </div>
-        </div>
-
-        <div class="defAlignemnt defSection">
-            <div class="promoBanner">
-                <h2>WE CAN HELP YOU WITH</h2>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit unde modi eligendi cupiditate quas officiis nesciunt nemo expedita dicta voluptate perspiciatis officia enim, quisquam voluptates tempora, distinctio molestiae nobis explicabo.</p>
-
-                <br>
-
-                <a href="#">LEARN MORE</a>
-            </div>
-        </div>
-
-        <div class="defAlignemnt defSection products">
-            <h2>FEATURED</h2>
-            
-            <div class="productBoxes">
-                <article>
-                    <h3>RCTS</h3>
-
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
-                    </p>
-                    
-                    <br>
-                    <a href="#">ORDER NOW</a>
-                    <br><br>
-                    <a href="#">PRODUCT OVERVIEW</a>
-                </article>
-
-                <article>
-                    <h3>Custom Solutions</h3>
-
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
-                    </p>
-                </article>
-
-                <article>
-                    <h3>Consultancy</h3>
-
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui maxime provident blanditiis tenetur vel doloremque voluptates sapiente laborum fuga ab, architecto molestias nemo officiis perspiciatis facere in cum! Illum, deserunt.
-                    </p>
-                </article>
-            </div>
-
-            <br><br>
-
-            <a href="#" class="defCTA primaryCTA" target="_blank">
-                SHOP
-            </a>
         </div>
     </main>
 
