@@ -12,9 +12,6 @@ html, body, header, footer, main, div, section, article, h1, h2, h3, h4, h5, h6,
 	text-decoration: none;
 	color: inherit;
 	background-color: none;
-}
-textarea
-{
 	resize: none;
 }
 button, a, a:visited, a:active, a:hover
@@ -24,8 +21,9 @@ button, a, a:visited, a:active, a:hover
 
 html, body
 {
-	font-size: 100%;
     font-family: "Courier New", Courier, monospace;
+	font-size: 100%;
+	
 	background-color: #ffffff;
 	color: #111111;
 }
@@ -46,13 +44,18 @@ html, body
   	font-variation-settings: "ROND" 0;
 }
 
-h1, h2, h3, h4, h5, h6, a, input, button
+h1, h2, h3, h4, h5, h6
 {
     font-family: "Doto", sans-serif;
   	font-optical-sizing: auto;
 	font-style: normal;
   	font-variation-settings: "ROND" 0;
   	font-weight: 800;
+}
+
+p, a, input, button, textarea, label
+{
+	font-family: 'Courier New', Courier, monospace;
 }
 
 /* Base font-size is 16px (1rem) by default. */
